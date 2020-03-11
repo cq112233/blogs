@@ -1,3 +1,5 @@
+//引入数据加密模块
+const bcrypt = require('bcrypt')
 // 第一步需要引入 mongoose 依赖包
 const mongoose = require('mongoose')
 //第三步创建集合规则
@@ -36,15 +38,19 @@ const blogSchema = new mongoose.Schema({
 const User =  mongoose.model('user',blogSchema)
 
 //创建第测试用户
-// User.create({
-// 	username:'cq',
-// 	email:"1549914423@qq.com",
-// 	password:"123456",
-// 	roles:'admin',
-// 	state:1
-// })
-// .then(()=>console.log('初始化用户创建成功'))
-// .catch(()=>console.log('用户创建失败'))
+// async function usercreate(obj) {
+// 	let salt = await bcrypt.genSalt(10)
+// 	let hash = await bcrypt.hash(obj,salt)
+// 	await User.create({
+// 		username:'cq',
+// 		email:"1549914423@qq.com",
+// 		password:hash,
+// 		roles:'admin',
+// 		state:1
+// 	})
+// }
+// usercreate('123456')
+
 //向外暴露开放接口
 module.exports = {
 	User
