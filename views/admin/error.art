@@ -5,7 +5,7 @@
 {{block 'js'}}
 	<script type="text/javascript">
 		setTimeout(function(){
-			location.href='/login'
+			location.href='/admin/login'
 		},3000)
 	</script>
 {{/block}}
