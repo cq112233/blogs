@@ -17,7 +17,7 @@
                 </div>
                 <div class="form-group">
                     <label>作者</label>
-                    <input type="text"name='author' class="form-control" readonly value="{{@info._id}}">
+                    <input type="text" name='author' class="form-control" readonly value="{{@info._id}}">
                 </div>
                 <div class="form-group">
                     <label>发布时间</label>

@@ -7,7 +7,7 @@ const formidable = require('formidable')
 //创建实例对象
 const form = new formidable.IncomingForm()
 //拼接地址
-const adress = path.join(__dirname,'../','../','uploadDir')
+const adress = path.join(__dirname,'../','../','public','uploadDir')
 
 form.uploadDir = adress
 //保留二进制文件的后缀
@@ -22,7 +22,7 @@ module.exports = (req,res) =>{
 			title:fields.title,
 			author:fields.author,
 			date:fields.date,
-			cover:files.cover.path.split('blog')[1],
+			cover:files.cover.path.split('public')[1],
 			content:fields.content
 		})
 		res.redirect('/admin/article')

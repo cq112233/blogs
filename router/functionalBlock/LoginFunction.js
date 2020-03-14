@@ -32,10 +32,15 @@ module.exports = async (req,res)=>{
 		if(isvaild){
 			//向客户端发送cookie令牌,将数据库用户对象的name赋值给请求对象等下次来访问时就携带请求属性
 			req.session.username = backdata.username
+			req.session.roles = backdata.roles
 			//将放回来的对象挂载到app.locals对象
 			req.app.locals.info = backdata
-			res.redirect('/admin/user')
-			return 
+			//判断用户是 普通用户还是后台管理用户
+			if(backdata.roles == 'admin'){
+				res.redirect('/admin/user')
+			}else{
+				res.redirect('/home')
+			}
 		}
 		//密码输错
 		else{

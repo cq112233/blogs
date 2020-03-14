@@ -1,6 +1,6 @@
 module.exports = (req,res)=>{
 	req.session.destroy(function(){
-		res.send('ok')
+		// res.send('ok')
 		//删除cookie
 		res.clearCookie()
 		// // 跳转到登入页面

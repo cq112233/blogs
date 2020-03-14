@@ -6,31 +6,36 @@ const {User,usercreate} = require('../database/user.js')
 const express = require('express')
 //创建home路由
 const admin = express.Router()
+// ------------------登入界面-------------------------
 //登入界面
 admin.get('/login',require('./functionalBlock/Interface.js'))
-//登入路由功能
+//登入界面功能
 admin.post('/login',require('./functionalBlock/LoginFunction.js'))
+
+// ----------------------------用户--------------------------------
 //用户页面
 admin.get('/user',require('./functionalBlock/userface.js'))
-//修改用户
+//添加/修改用户
 admin.post('/user-edit',require('./functionalBlock/usereditFunctional.js'))
 //退出功能
 admin.get('/exit',require('./functionalBlock/userexit.js'))
-//新增/修改用户跳转页面
+//新增/修改用户界面
 admin.get('/addUser',require('./functionalBlock/adduser.js'))
 //添加用户功能
 admin.post('/addUser',require('./functionalBlock/adduserFunctional.js'))
 //删除用户
 admin.get('/delete',require('./functionalBlock/deleteUser.js'))
-//文章界面
+// ----------------------------文章-------------------------
+
+//文章列表界面
 admin.get('/article',require('./functionalBlock/article.js'))
-//编辑/修改文章
+//添加/修改文章界面
 admin.get('/article-edit',require('./functionalBlock/article-edit.js'))
-//编辑/修改文章功能
+//添加文章功能
 admin.post('/article-add',require('./functionalBlock/article-add.js'))
 //修改文章功能
 admin.post('/editArticle',require('./functionalBlock/editArticle.js'))
-//删除文章
+//删除文章功能
 admin.get('/deleteArticle',require('./functionalBlock/deleteArticle.js'))
 
 // admin.get('/article',(req,res)=>{

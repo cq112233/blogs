@@ -1,7 +1,7 @@
 const {User} = require('../../database/user.js')
 //引入数据加密模块
 const bcrypt = require('bcrypt')
-//添加用户界面
+//添加/修改用户界面
 module.exports = async (req,res)=>{
 	req.app.locals.extendlink = 'user'
 	//如果过来id,则是修改操作

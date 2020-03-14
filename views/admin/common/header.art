@@ -14,7 +14,7 @@
                 </span>
                 <ul class="dropdown-menu">
                     <li><a href="user-edit.html">个人资料</a></li>
-                    <li><a href="/admin/exit">退出登录</a></li>
+                    <li><a href="/home/exit">退出登录</a></li>
                 </ul>
             </div>
         </div>
