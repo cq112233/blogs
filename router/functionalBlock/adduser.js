@@ -3,6 +3,7 @@ const {User} = require('../../database/user.js')
 const bcrypt = require('bcrypt')
 //添加用户界面
 module.exports = async (req,res)=>{
+	req.app.locals.extendlink = 'user'
 	//如果过来id,则是修改操作
 	let id = req.query.id
 	if (id) {

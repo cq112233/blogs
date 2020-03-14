@@ -12,14 +12,27 @@ admin.get('/login',require('./functionalBlock/Interface.js'))
 admin.post('/login',require('./functionalBlock/LoginFunction.js'))
 //用户页面
 admin.get('/user',require('./functionalBlock/userface.js'))
-//用户页面
+//修改用户
 admin.post('/user-edit',require('./functionalBlock/usereditFunctional.js'))
 //退出功能
 admin.get('/exit',require('./functionalBlock/userexit.js'))
-//新增用户功能
+//新增/修改用户跳转页面
 admin.get('/addUser',require('./functionalBlock/adduser.js'))
-
+//添加用户功能
 admin.post('/addUser',require('./functionalBlock/adduserFunctional.js'))
+//删除用户
+admin.get('/delete',require('./functionalBlock/deleteUser.js'))
+//文章界面
+admin.get('/article',require('./functionalBlock/article.js'))
+//编辑/修改文章
+admin.get('/article-edit',require('./functionalBlock/article-edit.js'))
+//编辑/修改文章功能
+admin.post('/article-add',require('./functionalBlock/article-add.js'))
+//修改文章功能
+admin.post('/editArticle',require('./functionalBlock/editArticle.js'))
+//删除文章
+admin.get('/deleteArticle',require('./functionalBlock/deleteArticle.js'))
+
 // admin.get('/article',(req,res)=>{
 // 	res.render('admin/article')
 // })

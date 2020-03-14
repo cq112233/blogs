@@ -1,3 +1,11 @@
+//引入日期处理格式模块
+const config = require('config')
+//引入日期处理格式模块
+const morgan = require('morgan')
+//引入日期处理格式模块
+const dateformat = require('dateformat')
+//引入日期处理格式模块
+const template = require('art-template')
 //引入session令牌登记
 const session = require('express-session')
 // 第一步引入 express依赖包
@@ -24,6 +32,15 @@ app.set('view engine','art')
 app.engine('art',require('express-art-template'))
 
 // 第五步创建模块化路由
+console.log(config.get('title'));
+if (process.env.NODE_ENV == 'development') {
+	console.log('开发者环境');
+	app.use(morgan('dev'))
+} else{
+	console.log('生产环境');
+}
+// console.log(process.env.NODE_ENV);
+
 
 ////第十四步,请求拦截判读用户是否已经登入
 app.use('/admin',require('./middleData/dengru.js'))
@@ -50,7 +67,7 @@ app.use((err,req,res,next)=>{
 	res.redirect(result.path + "?"+ attr.join('&'))
 })
 //第十步引入user
-
+template.defaults.imports.dateformat = dateformat
 // 第三步 监听80端口
 app.listen(80)
 // 第四步 提示服务器创建成功

@@ -2,6 +2,7 @@
 const { User } = require('../../database/user.js')
 //用户界面
 module.exports = async (req,res)=>{
+	req.app.locals.extendlink = 'user'
 	// -----------分页功能---------
 	//获取请求中页码
 	let page = req.query.page || 1
